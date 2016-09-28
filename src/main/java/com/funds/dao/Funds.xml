@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.funds.dao.FundsDao">
+
+    <select id="getFundsList" resultType="FundsEntity">
+        SELECT * FROM funds
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="fundsType != '' and fundsType != null">
+                AND fundsType = #{fundsType}
+            </if>
+        </trim>
+    </select>
+
+</mapper>
