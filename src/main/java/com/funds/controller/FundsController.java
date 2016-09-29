@@ -23,12 +23,15 @@ public class FundsController extends BasicController{
     @Autowired
     private FundsService fundsService;
 
-    @RequestMapping(value = "",produces = "application/json;charset=UTF-8",method = RequestMethod.POST)
+    @RequestMapping(value = "/getTotalFundsList",produces = "application/json;charset=UTF-8",method = RequestMethod.POST)
     public Result getTotalFundsList(@RequestBody FundsDto fundsDto){
-
-        List<FundsEntity> list=fundsService.getFundsList(fundsDto);
         Result result=new Result();
-        result.setResData(JSON.toJSON(list).toString());
+        try{
+            List<FundsEntity> list=fundsService.getTotalFundsList(fundsDto);
+            result.setResData(JSON.toJSON(list).toString());
+        }catch (Exception e){
+            result.setSuccess(false);
+        }
         return result;
     }
 

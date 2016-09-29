@@ -1,7 +1,6 @@
 package com.funds.entities;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * Created by jiang.qi on 2016/9/28.
@@ -10,7 +9,7 @@ public class FundsEntity {
 
     private Integer fundsId;
 
-    private Date date;
+    private String date;
 
     private BigDecimal perPrice;
 
@@ -20,6 +19,18 @@ public class FundsEntity {
 
     private String fundstype;
 
+    @Override
+    public String toString() {
+        return "FundsEntity{" +
+                "fundsId=" + fundsId +
+                ", date='" + date + '\'' +
+                ", perPrice=" + perPrice +
+                ", totalPrice=" + totalPrice +
+                ", dayRate=" + dayRate +
+                ", fundstype='" + fundstype + '\'' +
+                '}';
+    }
+
     public Integer getFundsId() {
         return fundsId;
     }
@@ -28,11 +39,11 @@ public class FundsEntity {
         this.fundsId = fundsId;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -66,17 +77,5 @@ public class FundsEntity {
 
     public void setFundstype(String fundstype) {
         this.fundstype = fundstype;
-    }
-
-    @Override
-    public String toString() {
-        return "FundsEntity{" +
-                "fundsId=" + fundsId +
-                ", date=" + date +
-                ", perPrice=" + perPrice +
-                ", totalPrice=" + totalPrice +
-                ", dayRate=" + dayRate +
-                ", fundstype='" + fundstype + '\'' +
-                '}';
     }
 }

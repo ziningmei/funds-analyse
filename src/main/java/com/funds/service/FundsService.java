@@ -11,6 +11,6 @@ import java.util.List;
  */
 public interface FundsService{
 
-    public List<FundsEntity> getFundsList(FundsDto fundsDto);
+    public List<FundsEntity> getTotalFundsList(FundsDto fundsDto);
 
 }
