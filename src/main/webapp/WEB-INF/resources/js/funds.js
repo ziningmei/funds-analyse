@@ -9,8 +9,8 @@ $(function () {
 
 funds.init=function () {
     funds.initCharts1();
-    funds.initCharts2();
-    funds.initCharts3();
+    // funds.initCharts2();
+    // funds.initCharts3();
     funds.initCharts4();
 };
 

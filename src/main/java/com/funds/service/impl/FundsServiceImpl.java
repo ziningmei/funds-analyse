@@ -72,7 +72,6 @@ class FundsServiceImpl implements FundsService {
 		FundsEntity entity = null;
 		for (int i = 1; i < list.size(); i++) {
 			entity = list.get(i);
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			entity.setDayRate((entity.getPerPrice().subtract(list.get(i - 1).getPerPrice())).multiply(new BigDecimal(100)));
 		}
 		return list;
