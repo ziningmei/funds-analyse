@@ -30,46 +30,6 @@ public class FundsController extends BasicController{
             List<FundsEntity> list=fundsService.getTotalFundsList(fundsDto);
             result.setResData(JSON.toJSON(list).toString());
         }catch (Exception e){
-            result.setResData(e.toString());
-            result.setSuccess(false);
-        }
-        return result;
-    }
-
-    @RequestMapping(value = "/getStartFundsList",produces = "application/json;charset=UTF-8",method = RequestMethod.POST)
-    public Result getStartFundsList(@RequestBody FundsDto fundsDto){
-        Result result=new Result();
-        try{
-            List<FundsEntity> list=fundsService.getStartFundsList(fundsDto);
-            result.setResData(JSON.toJSON(list).toString());
-        }catch (Exception e){
-            result.setResData(e.toString());
-            result.setSuccess(false);
-        }
-        return result;
-    }
-
-    @RequestMapping(value = "/getEndFundsList",produces = "application/json;charset=UTF-8",method = RequestMethod.POST)
-    public Result getEndFundsList(@RequestBody FundsDto fundsDto){
-        Result result=new Result();
-        try{
-            List<FundsEntity> list=fundsService.getEndFundsList(fundsDto);
-            result.setResData(JSON.toJSON(list).toString());
-        }catch (Exception e){
-            result.setResData(e.toString());
-            result.setSuccess(false);
-        }
-        return result;
-    }
-
-    @RequestMapping(value = "/getGapFundsList",produces = "application/json;charset=UTF-8",method = RequestMethod.POST)
-    public Result getGapFundsList(@RequestBody FundsDto fundsDto){
-        Result result=new Result();
-        try{
-            List<FundsEntity> list=fundsService.getGapFundsList(fundsDto);
-            result.setResData(JSON.toJSON(list).toString());
-        }catch (Exception e){
-            result.setResData(e.toString());
             result.setSuccess(false);
         }
         return result;
